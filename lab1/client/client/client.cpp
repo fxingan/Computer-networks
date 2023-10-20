@@ -18,11 +18,11 @@ DWORD WINAPI receive(){
             cout << "Client " << buffer << endl;
         }
         else if (receivebuf == 0){
-            cout << "Server closed the connection." << endl;
+            cout << "Server closed the connection" << endl;
             break;
         }
         else{
-            cout << "Exit successful";
+            cout << "Exit successful" << endl;
             break;
         }
     }
@@ -69,5 +69,6 @@ int main(){
     }
     closesocket(client);
     WSACleanup();
+    system("pause");
     return 0;
 }

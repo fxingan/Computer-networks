@@ -1,12 +1,11 @@
 ﻿  server.cpp
-C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(41,43): warning C4477: “sprintf_s”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“SOCKET”
-C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(41,43): message : 请考虑在格式字符串中使用“%lld”
-C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(41,43): message : 请考虑在格式字符串中使用“%Id”
-C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(41,43): message : 请考虑在格式字符串中使用“%I64d”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): warning C4477: “sprintf_s”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“SOCKET”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): message : 请考虑在格式字符串中使用“%lld”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): message : 请考虑在格式字符串中使用“%Id”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): message : 请考虑在格式字符串中使用“%I64d”
   正在生成代码
-C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(74): warning C4715: “Threadfun”: 不是所有的控件路径都返回值
-  2 of 25 functions ( 8.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+  All 25 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(72): warning C4715: “Threadfun”: 不是所有的控件路径都返回值
   已完成代码的生成
   server.vcxproj -> C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\x64\Release\server.exe

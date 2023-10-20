@@ -150,5 +150,6 @@ int main(){
     }
     closesocket(server);
     WSACleanup();
+    system("pause");
     return 0;
 }
