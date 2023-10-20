@@ -1,0 +1,7 @@
+﻿  server.cpp
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): warning C4477: “sprintf_s”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“SOCKET”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): message : 请考虑在格式字符串中使用“%lld”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): message : 请考虑在格式字符串中使用“%Id”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(39,43): message : 请考虑在格式字符串中使用“%I64d”
+C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\server\server.cpp(72): warning C4715: “Threadfun”: 不是所有的控件路径都返回值
+  server.vcxproj -> C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\server\x64\Debug\server.exe
