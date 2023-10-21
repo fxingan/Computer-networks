@@ -5,7 +5,7 @@
 #pragma comment(lib,"ws2_32.lib")   
 using namespace std;
 
-#define PORT 8000  // 服务器端口号
+#define PORT 8000  // 服务器端口
 #define BufSize 1024  // 缓冲区大小
 SOCKET client; 
 
@@ -17,12 +17,8 @@ DWORD WINAPI receive(){
         if (receivebuf > 0){
             cout << "Client " << buffer << endl;
         }
-        else if (receivebuf == 0){
-            cout << "Server closed the connection" << endl;
-            break;
-        }
         else{
-            cout << "Exit successful" << endl;
+            cout << "You have disconnected" << endl;
             break;
         }
     }

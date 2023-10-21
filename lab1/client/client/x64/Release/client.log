@@ -3,4 +3,4 @@
   Previous IPDB not found, fall back to full compilation.
   All 12 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
-  client.vcxproj -> C:\Users\24505\Desktop\代码狗\计网代码\第一次编程\client\x64\Release\client.exe
+  client.vcxproj -> C:\Users\24505\Desktop\github\Computer-networks\lab1\client\x64\Release\client.exe
