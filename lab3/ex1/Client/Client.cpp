@@ -7,13 +7,13 @@
 using namespace std;
 
 const int MAXSIZE = 8192;//传输缓冲区最大长度
-const unsigned char SYN = 0x1; //SYN = 1 ACK = 0
-const unsigned char ACK = 0x2;//SYN = 0 ACK = 1
-const unsigned char ACK_SYN = 0x3;//SYN = 1 ACK = 1
-const unsigned char FIN = 0x4;//FIN = 1 ACK = 0
-const unsigned char FIN_ACK = 0x5;//FIN = 1 ACK = 1
+const unsigned char SYN = 0x1; //SYN = 1 ACK = 0 第一次握手
+const unsigned char ACK = 0x2;//SYN = 0 ACK = 1 第二次握手 第二次挥手
+const unsigned char ACK_SYN = 0x3;//SYN = 1 ACK = 1 第三次握手
+const unsigned char FIN = 0x4;//FIN = 1 ACK = 0 第一次挥手
+const unsigned char FIN_ACK = 0x5;//FIN = 1 ACK = 1 第三次挥手 第四次挥手
 const unsigned char OVER = 0x7;//结束标志
-double MAX_TIME = 0.5 * CLOCKS_PER_SEC;
+double MAX_TIME = 0.5 * CLOCKS_PER_SEC;//超时时间
 
 struct HEADER {
     u_short sum = 0;//校验和 16位
