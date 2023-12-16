@@ -1,4 +1,4 @@
 ﻿  Server.cpp
-C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Server\Server.cpp(82,27): warning C4244: “=”: 从“u_short”转换到“unsigned char”，可能丢失数据
-C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Server\Server.cpp(192,27): warning C4244: “=”: 从“u_short”转换到“unsigned char”，可能丢失数据
+C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Server\Server.cpp(81,27): warning C4244: “=”: 从“u_short”转换到“unsigned char”，可能丢失数据
+C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Server\Server.cpp(193,27): warning C4244: “=”: 从“u_short”转换到“unsigned char”，可能丢失数据
   Server.vcxproj -> C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Server\x64\Debug\Server.exe
