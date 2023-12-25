@@ -15,7 +15,7 @@ const unsigned char FIN_ACK = 0x5;//FIN = 1 ACK = 1 第三次挥手 第四次挥
 const unsigned char REPEAT = 0x6;//重复标志
 const unsigned char OVER = 0x7;//结束标志
 double MAX_TIME = 0.5 * CLOCKS_PER_SEC;//超时时间
-const int WINDOW_SIZE = 8; //窗口大小
+const int WINDOW_SIZE = 10; //窗口大小
 
 struct HEADER {
     u_short sum = 0;//校验和 16位
@@ -140,7 +140,7 @@ void send(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen, char* m
                 cout << "Send has been confirmed! flag:" << int(header.flag) << " SEQ:" << header.SEQ << endl;
                 count++;
                 // 更新接收到的 ACK 的确认状态
-                if (ackSeq == head + 1) {                   
+                if (ackSeq == head + 1) {
                     head += count; // 移动头部指针
                     count = 0;
                 }
@@ -204,7 +204,7 @@ void send(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen, char* m
 }
 
 
-int disConnect(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen){//四次挥手断开连接
+int disConnect(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen) {//四次挥手断开连接
     HEADER header;
     char* Buffer = new char[sizeof(header)];
     //进行第一次挥手
@@ -212,15 +212,15 @@ int disConnect(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen){//
     header.sum = 0;//校验和置0
     header.sum = cksum((u_short*)&header, sizeof(header));
     memcpy(Buffer, &header, sizeof(header));//将首部放入缓冲区
-    if (sendto(socketClient, Buffer, sizeof(header), 0, (sockaddr*)&servAddr, servAddrlen) == -1){
+    if (sendto(socketClient, Buffer, sizeof(header), 0, (sockaddr*)&servAddr, servAddrlen) == -1) {
         return -1;
     }
     clock_t start = clock(); //记录发送第一次挥手时间
     u_long mode = 1;
     ioctlsocket(socketClient, FIONBIO, &mode);
     //第二次挥手
-    while (recvfrom(socketClient, Buffer, sizeof(header), 0, (sockaddr*)&servAddr, &servAddrlen) <= 0){
-        if (clock() - start > MAX_TIME){//超时，重新传输第一次挥手
+    while (recvfrom(socketClient, Buffer, sizeof(header), 0, (sockaddr*)&servAddr, &servAddrlen) <= 0) {
+        if (clock() - start > MAX_TIME) {//超时，重新传输第一次挥手
             cout << "第一次挥手超时，正在进行重传" << endl;
             header.flag = FIN;
             header.sum = 0;
@@ -232,7 +232,7 @@ int disConnect(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen){//
     }
     //进行校验和检验
     memcpy(&header, Buffer, sizeof(header));
-    if (header.flag != ACK || !cksum((u_short*)&header, sizeof(header) == 0)){
+    if (header.flag != ACK || !cksum((u_short*)&header, sizeof(header) == 0)) {
         cout << "连接发生错误，程序直接退出！" << endl;
         return -1;
     }
@@ -240,13 +240,13 @@ int disConnect(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen){//
     header.flag = FIN_ACK;
     header.sum = 0;
     header.sum = cksum((u_short*)&header, sizeof(header));//计算校验和
-    if (sendto(socketClient, (char*)&header, sizeof(header), 0, (sockaddr*)&servAddr, servAddrlen) == -1){
+    if (sendto(socketClient, (char*)&header, sizeof(header), 0, (sockaddr*)&servAddr, servAddrlen) == -1) {
         return -1;
     }
     start = clock();
     //第四次挥手
-    while (recvfrom(socketClient, Buffer, sizeof(header), 0, (sockaddr*)&servAddr, &servAddrlen) <= 0){
-        if (clock() - start > MAX_TIME){//超时，重新传输第三次挥手    
+    while (recvfrom(socketClient, Buffer, sizeof(header), 0, (sockaddr*)&servAddr, &servAddrlen) <= 0) {
+        if (clock() - start > MAX_TIME) {//超时，重新传输第三次挥手    
             cout << "第三次握手超时，正在进行重传" << endl;
             header.flag = FIN;
             header.sum = 0;//校验和置0
@@ -260,10 +260,10 @@ int disConnect(SOCKET& socketClient, SOCKADDR_IN& servAddr, int& servAddrlen){//
     return 1;
 }
 
-int main(){
+int main() {
     WSADATA wsadata;
     WSAStartup(MAKEWORD(2, 2), &wsadata);
-    SOCKADDR_IN server_addr;   
+    SOCKADDR_IN server_addr;
     SOCKADDR_IN client_addr;
     SOCKET Client;
     char serverIP[50];
@@ -296,7 +296,7 @@ int main(){
     Client = socket(AF_INET, SOCK_DGRAM, 0);
     bind(Client, (SOCKADDR*)&client_addr, sizeof(client_addr));
     int len = sizeof(server_addr);
-    if (Connect(Client, server_addr, len) == -1){
+    if (Connect(Client, server_addr, len) == -1) {
         return 0;
     }
     string filename;
@@ -306,7 +306,7 @@ int main(){
     char* buffer = new char[100000000];
     int index = 0;
     unsigned char temp = fin.get();
-    while (fin){
+    while (fin) {
         buffer[index++] = temp;
         temp = fin.get();
     }

@@ -1,5 +1,3 @@
 ﻿  Client.cpp
-C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Client\Client.cpp(59,13): warning C4101: “sum”: 未引用的局部变量
-C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Client\Client.cpp(208,13): warning C4101: “sum”: 未引用的局部变量
-C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Client\Client.cpp(317,78): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Client\Client.cpp(314,78): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
   Client.vcxproj -> C:\Users\LEGION\Desktop\github\Computer-networks\lab3\ex1\Client\x64\Debug\Client.exe
